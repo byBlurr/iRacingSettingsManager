@@ -9,7 +9,8 @@ namespace iRacingSettingsManager.Windows
 {
     public partial class MainWindow : Form
     {
-        public static string DownloadLink = "";
+        public static string DownloadLink = "https://github.com/byBlurr/iRacingSettingsManager/releases";
+
         public static string IRFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "iRacing");
         public static string IRConfigPath = Path.Combine(IRFolder, "app.ini");
         public static string SMFolder = Path.Combine(IRFolder, "blurr", "configs");
