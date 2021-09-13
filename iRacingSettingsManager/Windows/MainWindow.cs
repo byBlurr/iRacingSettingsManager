@@ -10,6 +10,7 @@ namespace iRacingSettingsManager.Windows
     public partial class MainWindow : Form
     {
         public static string DownloadLink = "https://github.com/byBlurr/iRacingSettingsManager/releases";
+        public static string Version = "v21.9.3";
 
         public static string IRFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "iRacing");
         public static string IRConfigPath = Path.Combine(IRFolder, "app.ini");
@@ -134,6 +135,14 @@ namespace iRacingSettingsManager.Windows
         {
             // TODO: Check for updates...
             MessageBox.Show($"Functionality has not yet been implemented. Check {DownloadLink} for updates for now!", "Unimplemented Feature");
+            return;
+        }
+
+        private void HelpButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Settings not changing in iRacing? Make sure your simulator is closed when you load a new config.\n\n" +
+                $"If you have any issues/bugs or need help, message Blurr#9789 on Discord.\n\n" +
+                $"You are running iRacingSettingsManager {Version}", "Help");
             return;
         }
     }

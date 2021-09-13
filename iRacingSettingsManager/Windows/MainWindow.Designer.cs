@@ -42,6 +42,7 @@ namespace iRacingSettingsManager.Windows
             this.EditButton = new System.Windows.Forms.Button();
             this.OptionsMenuStrip = new System.Windows.Forms.MenuStrip();
             this.UpdatesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.HelpButton = new System.Windows.Forms.Button();
             this.NewGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConfigsData)).BeginInit();
             this.OptionsMenuStrip.SuspendLayout();
@@ -168,7 +169,7 @@ namespace iRacingSettingsManager.Windows
             this.UpdatesMenuItem});
             this.OptionsMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.OptionsMenuStrip.Name = "OptionsMenuStrip";
-            this.OptionsMenuStrip.Size = new System.Drawing.Size(470, 24);
+            this.OptionsMenuStrip.Size = new System.Drawing.Size(460, 24);
             this.OptionsMenuStrip.TabIndex = 6;
             this.OptionsMenuStrip.Text = "Options";
             this.OptionsMenuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.OptionsMenuStrip_ItemClicked);
@@ -179,11 +180,22 @@ namespace iRacingSettingsManager.Windows
             this.UpdatesMenuItem.Size = new System.Drawing.Size(116, 20);
             this.UpdatesMenuItem.Text = "Check for Updates";
             // 
+            // HelpButton
+            // 
+            this.HelpButton.Location = new System.Drawing.Point(362, 241);
+            this.HelpButton.Name = "HelpButton";
+            this.HelpButton.Size = new System.Drawing.Size(87, 23);
+            this.HelpButton.TabIndex = 7;
+            this.HelpButton.Text = "Help";
+            this.HelpButton.UseVisualStyleBackColor = true;
+            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 381);
+            this.ClientSize = new System.Drawing.Size(460, 381);
+            this.Controls.Add(this.HelpButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.LoadButton);
@@ -218,5 +230,6 @@ namespace iRacingSettingsManager.Windows
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.MenuStrip OptionsMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem UpdatesMenuItem;
+        private System.Windows.Forms.Button HelpButton;
     }
 }
