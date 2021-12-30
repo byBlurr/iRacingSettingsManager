@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iRacingSettingsManager.Data;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -127,7 +128,27 @@ namespace iRacingSettingsManager.Windows
 
         private void EditButton_Click(object sender, EventArgs e)
         {
+            if (ConfigsData.Rows.Count <= 0)
+            {
+                MessageBox.Show("No valid configs to edit...", "Error editing config...");
+                return;
+            }
+
+            string file = ConfigsData.SelectedRows[0].Cells[1].Value.ToString();
+            string data = File.ReadAllText(Path.Combine(SMConfigPath, file));
+            Dictionary<string, Dictionary<string, string>> config = Reader.ReadConfig(data);
+
+            foreach (KeyValuePair<string, Dictionary<string, string>> item in config)
+            {
+                Debug.WriteLine($"{item.Key}:");
+                foreach (var setting in item.Value)
+                {
+                    Debug.WriteLine($"{setting.Key} == {setting.Value}");
+                }
+            }
+
             MessageBox.Show("Functionality has not yet been implemented. You will be able to easily modify your setups!", "Unimplemented Feature");
+
             return;
         }
 
