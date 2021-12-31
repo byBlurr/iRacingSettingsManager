@@ -138,14 +138,7 @@ namespace iRacingSettingsManager.Windows
             string data = File.ReadAllText(Path.Combine(SMConfigPath, file));
             Dictionary<string, Dictionary<string, string>> config = Reader.ReadConfig(data);
 
-            foreach (KeyValuePair<string, Dictionary<string, string>> item in config)
-            {
-                Debug.WriteLine($"{item.Key}:");
-                foreach (var setting in item.Value)
-                {
-                    Debug.WriteLine($"{setting.Key} == {setting.Value}");
-                }
-            }
+            Reader.SaveConfig(config, file);
 
             MessageBox.Show("Functionality has not yet been implemented. You will be able to easily modify your setups!", "Unimplemented Feature");
 

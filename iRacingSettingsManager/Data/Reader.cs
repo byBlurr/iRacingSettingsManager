@@ -1,5 +1,7 @@
-﻿using System;
+﻿using iRacingSettingsManager.Windows;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +38,22 @@ namespace iRacingSettingsManager.Data
             }
 
             return config;
+        }
+
+        public static void SaveConfig(Dictionary<string, Dictionary<string, string>> config, string name)
+        {
+            string data = "";
+
+            foreach (var section in config)
+            {
+                data += $"\n\n[{section.Key}]";
+                foreach (var param in section.Value)
+                {
+                    data += $"\n{param.Key}={param.Value}";
+                }
+            }
+
+            File.WriteAllText(Path.Combine(MainWindow.SMConfigPath, $"{name}"), data);
         }
     }
 }
